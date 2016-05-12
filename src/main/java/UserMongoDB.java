@@ -25,7 +25,7 @@ public class UserMongoDB {
 			DB db = mongo.getDB("EgenChallenge");
 		
 			// obtaining the particular table/collection.
-			DBCollection collection = db.getCollection("temp4");
+			DBCollection collection = db.getCollection("User");
 		
 			// creating document for insertion into database.
 			BasicDBObject doc = new BasicDBObject("firstName", user.getFirstName())
@@ -70,7 +70,7 @@ public class UserMongoDB {
 			DB db = mongo.getDB("EgenChallenge");
 			
 			// obtaining the particular table/collection.
-			DBCollection collection = db.getCollection("temp4");
+			DBCollection collection = db.getCollection("User");
 			
 			// obtaining all the documents from user collections
 			DBCursor cursor = collection.find();
@@ -103,7 +103,7 @@ public class UserMongoDB {
 			DB db = mongo.getDB("EgenChallenge");
 			
 			// obtaining the particular table/collection.
-			DBCollection collection = db.getCollection("temp4");		
+			DBCollection collection = db.getCollection("User");		
 			ObjectId objId = new ObjectId(user.getId());
 			
 			// find the particular document using id.
