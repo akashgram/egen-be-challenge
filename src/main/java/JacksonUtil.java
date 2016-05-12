@@ -1,9 +1,6 @@
-
-
 import java.io.IOException;
 
 import org.codehaus.jackson.map.ObjectMapper;
-
 
 public class JacksonUtil  {
 	
@@ -14,7 +11,8 @@ public class JacksonUtil  {
 		try {			
 			// convert object to JSON string
 			String jsonInString = mapper.writeValueAsString(user);
-			return jsonInString;	
+			return jsonInString;
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -28,16 +26,11 @@ public class JacksonUtil  {
 		try {
 			// convert JSON string to Object.			
 			User user = mapper.readValue(jsonString, User.class);
-			
 			return user;
 
 		} catch (IOException e) {
 			e.printStackTrace();
-		}
-		
+		}	
 		return null;
 	}
-	
-	
-
 }

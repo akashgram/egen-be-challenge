@@ -21,6 +21,7 @@ public class UserSparkController {
 					.jsonToObject(request.body()));
 		});
 
+		// updating the user
 		Spark.put("/UpdateUser", (request, response) -> {
 					String result = UserService.updateUser(JacksonUtil
 							.jsonToObject(request.body()));
