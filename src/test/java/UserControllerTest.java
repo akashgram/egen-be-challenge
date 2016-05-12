@@ -18,79 +18,79 @@ import spark.utils.IOUtils;
 
 public class UserControllerTest{
 	
-	//id set to 
-	private static String id = "5733de81d4c6c63c98a34433";
+	//id set to be set.
+	private static String id = "";
 	private Date d;
 	
-//	//Calling POST method
-//	@Test
-//	public void addNewUser() {
-//        
-//		User reqbody = new User();
-//		d = new Date();
-//	    Format format = new SimpleDateFormat("yyyy MM dd HH:mm:ss");
-//	    String dateCreated = format.format(d);
-//		reqbody.setFirstName("coutinho");
-//		reqbody.setDateCreated(dateCreated);
-//		reqbody.setProfilePic("http://lorempixel.com/640/480/people");
-//		reqbody.setLastName("soornahalii");
-//		reqbody.setEmail("akashgram@gmail.com");
-//		
-//		Address address = new Address();
-//		address.setStreet("193 Talon Valley");
-//		address.setCity("South Tate furt");		
-//		address.setState("47069");
-//		address.setZip("IA");
-//		address.setCountry("US");		
-//		reqbody.setAddress(address);
-//		
-//		
-//		Company company = new Company();
-//		company.setName("Denesik Group");
-//		company.setWebsite("http://jodie.org");
-//		reqbody.setCompany(company);
-//		
-//		
-//		
-//		
-//		String  res = request("POST", "/user", reqbody);
-//		System.out.println("Res: " + reqbody);
-//        User responseUser = JacksonUtil.jsonToObject(res);
-//		assertNotNull(responseUser.getId());
-//		id = responseUser.getId();
-//	}
-	
-	//Calling PUT method
+	//Calling POST method
 	@Test
-	public void updateUser() {
-		
+	public void addNewUser() {
+        
 		User reqbody = new User();
-		reqbody.setId(id);
-		reqbody.setFirstName("Akash");
 		d = new Date();
 	    Format format = new SimpleDateFormat("yyyy MM dd HH:mm:ss");
 	    String dateCreated = format.format(d);
-		reqbody.setProfilePic("http://lorempixel.com/640/480/people");
-		reqbody.setLastName("gopal");
+		reqbody.setFirstName("Phillipe");
 		reqbody.setDateCreated(dateCreated);
-		Address address = new Address();
+		reqbody.setProfilePic("http://lorempixel.com/640/480/people");
+		reqbody.setLastName("Coutinho");
+		reqbody.setEmail("littlemagician@gmail.com");
 		
-		address.setStreet("Richmond Avenue");
-		address.setCity("Bangalore");		
-		address.setState("47069");
-		address.setZip("karantaka");
-		address.setCountry("india");		
+		Address address = new Address();
+		address.setStreet("193 Talon Valley");
+		address.setCity("South Tate furt");		
+		address.setState("liv");
+		address.setZip("2341");
+		address.setCountry("UK");		
 		reqbody.setAddress(address);
 		
+		
 		Company company = new Company();
-		company.setName("ooooooooooooooooo");
-		company.setWebsite("http://google.org");
+		company.setName("liverpool");
+		company.setWebsite("http://liverpoolfc.com");
 		reqbody.setCompany(company);
-		reqbody.setEmail("Darby_Leffler68@gmail.com");
-		String result = request("PUT","/UpdateUser",reqbody);
-	
-		assertNotNull(result);
+		
+		
+		
+		
+		String  res = request("POST", "/user", reqbody);
+		System.out.println("Res: " + reqbody);
+        User responseUser = JacksonUtil.jsonToObject(res);
+		assertNotNull(responseUser.getId());
+		id = responseUser.getId();
 	}
+	
+	//Calling PUT method
+	// @Test
+	// public void updateUser() {
+		
+	// 	User reqbody = new User();
+	// 	reqbody.setId(id);
+	// 	reqbody.setFirstName("Akash");
+	// 	d = new Date();
+	//     Format format = new SimpleDateFormat("yyyy MM dd HH:mm:ss");
+	//     String dateCreated = format.format(d);
+	// 	reqbody.setProfilePic("http://lorempixel.com/640/480/people");
+	// 	reqbody.setLastName("gopal");
+	// 	reqbody.setDateCreated(dateCreated);
+	// 	Address address = new Address();
+		
+	// 	address.setStreet("Richmond Avenue");
+	// 	address.setCity("Bangalore");		
+	// 	address.setState("47069");
+	// 	address.setZip("karantaka");
+	// 	address.setCountry("india");		
+	// 	reqbody.setAddress(address);
+		
+	// 	Company company = new Company();
+	// 	company.setName("ooooooooooooooooo");
+	// 	company.setWebsite("http://google.org");
+	// 	reqbody.setCompany(company);
+	// 	reqbody.setEmail("Darby_Leffler68@gmail.com");
+	// 	String result = request("PUT","/UpdateUser",reqbody);
+	
+	// 	assertNotNull(result);
+	// }
 
 	
 	private String request(String method, String path,User user) {
