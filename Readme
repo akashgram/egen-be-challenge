@@ -1,0 +1,4 @@
+
+to create new user: http://localhost:4567/user
+to display all users: http://localhost:4567/users
+to update user: http://localhost:4567/UpdateUser
